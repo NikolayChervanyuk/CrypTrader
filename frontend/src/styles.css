@@ -1,0 +1,39 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f8fbfd;
+  color: #1a1a1a;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 10px 15px;
+  transition: background 0.3s ease;
+}
+button.primary {
+  background-color: #004766;
+  color: white;
+}
+button.primary:hover {
+  background-color: #00334d;
+}
+button.success {
+  background-color: #28a745;
+  color: white;
+}
+button.success:hover {
+  filter: brightness(80%);
+}
+button.error {
+  background-color: #dc3545;
+  color: white;
+}
+button.error:hover {
+  filter: brightness(80%);
+}
+
+/*# sourceMappingURL=styles.css.map */

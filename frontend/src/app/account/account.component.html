@@ -1,0 +1,22 @@
+<div class="account-container">
+  <h1>Account Details</h1>
+  <div class="account-info">
+    <p><strong>Username:</strong> {{ username }}</p>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <button class="reset-button" (click)="resetAccount()">Reset account</button>
+  </div>
+
+  <div class="tabs">
+    <button [class.active]="selectedTab === 'assets'" (click)="switchTab('assets')">
+      <img ngSrc="/assets/bitcoin-icon.svg" alt="Owned assets" height="16" width="16"/>
+      Assets
+    </button>
+    <button [class.active]="selectedTab === 'history'" (click)="switchTab('history')">
+      <img ngSrc="/assets/history-icon.svg" alt="Trade history" height="16" width="16"/>
+      Trade History
+    </button>
+  </div>
+
+  <app-assets *ngIf="selectedTab === 'assets'"></app-assets>
+  <app-trade-history *ngIf="selectedTab === 'history'"></app-trade-history>
+</div>

@@ -1,0 +1,27 @@
+<div class="auth-container">
+  <div class="auth-card">
+    <div>
+      <span>
+      <img ngSrc="/assets/logo.svg" alt="CrypTrader Logo" height="60" width="60"/>
+        <div class="text-header">CrypTrader</div>
+        <div class="text-subheader">YOUR TRADING PLATFORM</div>
+      </span>
+    </div>
+    <form (ngSubmit)="login()">
+      <div class="input-group">
+        <!--        <label for="email">Email</label>-->
+        <input id="identifier" name="identifier" type="text" placeholder="Enter your email or username" [(ngModel)]="identifier" required/>
+      </div>
+
+      <div class="input-group">
+        <!--        <label for="password">Password</label>-->
+        <input id="password" name="password" type="password" placeholder="Enter your password" [(ngModel)]="password"
+               required/>
+      </div>
+
+      <button class="auth-button" type="submit">Log in</button>
+    </form>
+
+    <p class="switch-auth">Don’t have an account? <a routerLink="/auth/register">Sign up here</a></p>
+  </div>
+</div>

@@ -1,0 +1,96 @@
+@use 'styles.scss' as *;
+
+h1{
+  color: $primary-color;
+}
+
+.account-container {
+  max-width: 100%;
+  //margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+  .account-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .reset-button {
+    background: $error-color;
+    color: white;
+    font-weight: bold;
+    font-size: 1.125rem;
+    padding: 10px 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 150ms;
+
+    &:hover {
+      filter: brightness(0.8);
+      transition: 150ms;
+    }
+  }
+
+  .tabs {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+
+    button {
+      padding: 8px 12px;
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+
+      &.active {
+        //padding: 8px 12px;
+        //border-radius: 5px;
+        background: $selected-tab-color;
+        cursor: pointer;
+
+        &:hover {
+          filter: brightness(1.1);
+          transition: 100ms;
+        }
+
+        //font-weight: bold;
+        //border-bottom: 2px solid $primary-color;
+
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: $primary-color;
+      color: white;
+    }
+
+    .sell-button {
+      background-color: $error-color;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken($error-color, 10%);
+      }
+    }
+  }
+}

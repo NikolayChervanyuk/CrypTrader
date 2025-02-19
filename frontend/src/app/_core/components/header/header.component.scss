@@ -1,0 +1,83 @@
+@use 'styles.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $background-color;
+  padding: 15px 20px;
+  height: 45px;
+  color: white;
+  border-bottom: 2px solid $accent-color; //todo
+
+
+  .logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+      max-width: 60px;
+      margin-right: 10px;
+    }
+  }
+  .balance {
+    color: $primary-color;
+    font-weight: bold;
+  }
+
+  .text-header{
+    font-family: "Lexend Deca", serif;
+    font-weight: 700;
+    font-size: 36px;
+    margin-left: 5px;
+    color: $primary-color;
+  }
+  .text-subheader{
+    font-family: "Lexend Deca", serif;
+    padding-top: 2px;
+    font-weight: 700;
+    font-size: 10px;
+    margin-left: 5px;
+    color: $ternary-color;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .account-btn {
+    display: flex;
+    flex-flow: column;
+    background: $background-color;
+    padding: 5px;
+    border-radius: 5px;
+    align-items: center;
+    color: $primary-color;
+
+    &:hover {
+      filter: brightness(0.8);
+      transition: 100ms;
+      cursor: pointer;
+    }
+  }
+
+  .user-img {}
+
+  button {
+    background: none;
+
+    border: 1px solid $primary-color;
+    padding: 5px 10px;
+    border-radius: 50px;
+  }
+  .logout-btn {
+
+    &:hover {
+      background-color: white;
+      filter: brightness(0.8);
+    }
+  }
+}

@@ -1,0 +1,79 @@
+@use 'styles.scss' as *;
+.home-container {
+  max-width: 90%;
+  margin: 30px auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid $primary-color;
+    padding-bottom: 10px;
+  }
+
+  .tab {
+    //padding: 8px 12px;
+    //border-radius: 5px;
+    background: $selected-tab-color;
+    cursor: pointer;
+    margin-right: 10px;
+
+    &:hover{
+      filter: brightness(1.1);
+      transition: 100ms;
+    }
+  }
+  .numeration{
+    font-weight: bold;
+    font-size: 14px;
+    color: $light-text-color;
+  }
+  .col-name{
+    font-weight: bold;
+    font-size: 16px;
+    color: $primary-color
+  }
+
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    tr {
+      transition: 500ms;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid $accent-color;
+    }
+
+    th {
+      background-color: white;
+      color: $light-text-color;
+      font-size: 12px;
+    }
+
+    .buy-button {
+      background-color: $success-color;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken($success-color, 10%);
+      }
+    }
+  }
+
+  .price-change-highlight {
+    background-color: $accent-color;
+    transition: background-color 1s ease-in-out;
+  }
+}

@@ -1,0 +1,4 @@
+<div [ngSwitch]="tradeType">
+  <app-buy *ngSwitchCase="TradeType.BUY" [symbol]="this.symbol"></app-buy>
+  <app-sell *ngSwitchCase="TradeType.SELL" [symbol]="this.symbol"></app-sell>
+</div>

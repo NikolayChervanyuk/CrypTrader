@@ -1,0 +1,58 @@
+@use 'styles.scss' as *;
+
+h3 {
+  color: $accent-color;
+  font-weight: bold;
+}
+
+.trade-history-container {
+  width: 90%;
+  max-width: 95%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.trade-history-header {
+  font-size: 18px;
+  font-weight: bold;
+  color: $primary-color;
+  border-bottom: 2px solid $primary-color;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.trade-history-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: $background-color;
+    color: $text-color;
+    font-weight: bold;
+  }
+
+  .trade-type {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  .buy {
+    background-color: green;
+    color: white;
+  }
+
+  .sell {
+    background-color: red;
+    color: white;
+  }
+}

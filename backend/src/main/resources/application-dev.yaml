@@ -1,0 +1,29 @@
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/cryp-trader-db?currentSchema=public
+    username: user
+    password: password
+    name: cryp-trader-db
+    pool:
+      max-size: 1000
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+  flyway:
+    url: jdbc:postgresql://localhost:5432/cryp-trader-db?currentSchema=public
+    user: user
+    password: password
+    locations: classpath:db/migration
+    enabled: true
+cryp-trader:
+  refresh-token-expiration-minutes: 20160
+  access-token-expiration-minutes: 10080
+  secret-key: ade12cc1c9bf1c9855cba190f49a205e97571d2dddbedd239ba80cec852ab4dd
+kraken-api:
+  get:
+    asset-pairs: https://api.kraken.com/0/public/AssetPairs
+    ticker-snapshot: https://api.kraken.com/0/public/Ticker
+
+

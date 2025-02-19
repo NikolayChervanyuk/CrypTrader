@@ -1,0 +1,21 @@
+<header class="header">
+  <div class="logo" (click)="goToHome()">
+    <img ngSrc="/assets/logo.svg" alt="CrypTrader Logo" height="60" width="60"/>
+    <div class="text-header">
+      <span>CrypTrader</span>
+      <div class="text-subheader">YOUR TRADING PLATFORM</div>
+    </div>
+  </div>
+
+  <div *ngIf="isLoggedIn" class="user-info">
+    <span class="balance">Balance: ${{ balance | number: '1.2-2' }}</span>
+    <div class="account-btn" (click)="goToAccount()">
+      <img class="user-img" ngSrc="/assets/user.svg" alt="User Icon" height="30" width="30"/>
+      <div>{{ username }}</div>
+    </div>
+    <button class="logout-btn" (click)="logout()">Log Out</button>
+  </div>
+  <div *ngIf="!isLoggedIn" class="user-info">
+    <button class="logout-btn" (click)="goToLogin()">Log In</button>
+  </div>
+</header>

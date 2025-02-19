@@ -1,0 +1,89 @@
+@use 'styles.scss' as *;
+
+.trade-container {
+  max-width: 50%;
+  margin: 50px auto;
+  padding: 2rem;
+  background: white;
+
+  h2 {
+    color: $primary-color;
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    color: $secondary-color;
+    margin-bottom: 30px;
+  }
+
+  h4 {
+    color: $primary-color;
+    margin-bottom: 15px;
+  }
+
+  .buy-button,
+  .sell-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  .buy-button {
+    background: $success-color;
+
+    &:hover {
+      background: #007b65;
+    }
+
+    .disabled {
+      background: darkgrey;
+      cursor: not-allowed;
+    }
+  }
+
+  .sell-button {
+    background: $error-color;
+
+    &:hover {
+      background: darkred;
+    }
+    .disabled {
+      background: darkgrey;
+      cursor: not-allowed;
+    }
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+
+    label {
+      font-size: 0.8rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: left;
+      color: #333;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+      transition: 0.3s;
+
+      &:focus {
+        border-color: #007bff;
+      }
+    }
+  }
+}

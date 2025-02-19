@@ -1,0 +1,49 @@
+<div class="auth-container">
+  <div class="auth-card">
+    <div>
+      <span>
+      <img ngSrc="/assets/logo.svg" alt="CrypTrader Logo" height="60" width="60"/>
+        <div class="text-header">CrypTrader</div>
+        <div class="text-subheader">YOUR TRADING PLATFORM</div>
+      </span>
+    </div>
+
+    <h2>Register</h2>
+
+    <form (ngSubmit)="register()">
+      <div class="input-group">
+        <!--        <label for="email">Email</label>-->
+        <input id="email" name="email" type="email" placeholder="Enter your email" [(ngModel)]="email" required/>
+      </div>
+
+      <div class="input-group">
+        <!--        <label for="email">Email</label>-->
+        <input id="username" name="username" type="text" placeholder="Enter your username" [(ngModel)]="username"
+               required/>
+      </div>
+
+      <div class="input-group">
+        <!--        <label for="password">Password</label>-->
+        <input id="password" name="password" type="password" placeholder="Create a password" [(ngModel)]="password"
+               required/>
+      </div>
+
+      <div class="input-group">
+        <!--        <label for="confirm-password">Confirm Password</label>-->
+        <input id="confirm-password" name="confirm-password" type="password" placeholder="Repeat your password"
+               [(ngModel)]="confirmPassword"
+               required/>
+      </div>
+
+      <div *ngIf="errorMessage !== ''"
+           style="color: darkred;
+        font-size: .75rem;
+        margin-bottom: 15px">{{ errorMessage }}
+      </div>
+
+      <button class="auth-button" type="submit">Register</button>
+    </form>
+
+    <p class="switch-auth">Already have an account? <a routerLink="/auth/login">Log in here</a></p>
+  </div>
+</div>

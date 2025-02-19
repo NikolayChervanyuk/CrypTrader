@@ -1,0 +1,35 @@
+<div class="trade-container">
+  <form (ngSubmit)="sell()">
+    <h2>Sell {{ symbol }}</h2>
+    <h1>$ {{ Number(marketPrice()).toFixed(2) }}</h1>
+
+    <h4>Balance after trade</h4>
+    <h1>$ {{ Number(balanceAfterTrade()).toFixed(2) }}</h1>
+
+    <div class="input-group">
+      <label for="cryptoAmountSell">Amount of {{ symbol }} to sell</label>
+      <input id="cryptoAmountSell" name="amount" type="text" placeholder="Amount of {{symbol}} to sell"
+             [(ngModel)]="amountCryptoToSell" (keyup)="onAmountChanged()" required/>
+      <span style="color: darkred" *ngIf="isInsufficientFunds">Insufficient funds</span>
+      <span style="color: darkred" *ngIf="amountCryptoToSell <= 0">Amount should be a positive value</span>
+    </div>
+
+    <h4>{{ symbol }} owned</h4>
+    <h1>{{ symbol }} {{ amountCryptoCurrentlyOwned }}</h1>
+
+    <h4>{{ symbol }} owned after trade</h4>
+    <h1>{{ symbol }} {{ amountCryptoOwnedAfterTrade() }}</h1>
+
+    <label>
+      <input style="margin-bottom: 40px" type="checkbox" name="approveCheck" [(ngModel)]="confirmTrade"/> I approve this
+      transaction
+    </label> <br>
+    <div *ngIf="confirmTrade &&
+          amountCryptoToSell > 0 &&
+          !isInsufficientFunds">
+      <button class="sell-button" type="submit">SELL</button>
+    </div>
+  </form>
+</div>
+
+

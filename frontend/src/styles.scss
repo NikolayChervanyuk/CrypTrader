@@ -1,0 +1,57 @@
+$primary-color: #002b3d;
+$secondary-color: #005372;
+$ternary-color: #ffc107;
+$background-color: #f8fbfd;
+$text-color: #1a1a1a;
+$light-text-color: #748186;
+$button-color: #004766;
+$button-hover: #00334d;
+$success-color: #28a745;
+$error-color: #dc3545;
+$accent-color: #8aabb7;
+$selected-tab-color: #cdf0fd;
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 10px 15px;
+  transition: background 0.3s ease;
+
+  &.primary {
+    background-color: $button-color;
+    color: white;
+
+    &:hover {
+      background-color: $button-hover;
+    }
+  }
+
+  &.success {
+    background-color: $success-color;
+    color: white;
+
+    &:hover {
+      filter: brightness(80%);
+    }
+  }
+
+  &.error {
+    background-color: $error-color;
+    color: white;
+
+    &:hover {
+      filter: brightness(80%);
+      //background-color: darken($error-color, 10%);
+    }
+  }
+}

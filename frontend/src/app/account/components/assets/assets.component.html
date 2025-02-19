@@ -1,0 +1,32 @@
+<div class="assets-container">
+  <div class="assets-header">
+    <span>Assets</span>
+  </div>
+
+  <table class="assets-table" *ngIf="ownedAssets.length > 0">
+    <thead>
+    <tr>
+      <th>Currency</th>
+      <th>Quantity</th>
+      <th>Current Value</th>
+      <th>Profit</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let asset of ownedAssets">
+      <td>{{ asset.symbol }}</td>
+      <td>{{ asset.quantity | number:'1.1-6' }}</td>
+      <td>${{ asset.currentPrice | number:'1.2-2' }}</td>
+      <td [ngClass]="{'profit-positive': asset.totalProfit >= 0, 'profit-negative': asset.totalProfit < 0}">
+        ${{ asset.totalProfit | number:'1.2-2' }}
+      </td>
+      <td>
+        <button class="sell-button" (click)="sell(asset.symbol)">SELL</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h3 *ngIf="ownedAssets.length == 0">You have no assets</h3>
+</div>

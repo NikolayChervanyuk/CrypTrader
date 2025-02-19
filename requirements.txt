@@ -1,0 +1,2 @@
+Additional dependency:
+ngx-cookie-service - "npm install ngx-cookie-service"

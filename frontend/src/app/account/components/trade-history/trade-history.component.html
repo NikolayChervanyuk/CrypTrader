@@ -1,0 +1,31 @@
+<div class="trade-history-container">
+  <div class="trade-history-header">
+    <span>Trade History</span>
+  </div>
+
+  <table *ngIf="tradeHistory.length > 0" class="trade-history-table">
+    <thead>
+    <tr>
+      <th>Type</th>
+      <th>Currency</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let trade of tradeHistory">
+      <td>
+          <span class="trade-type" [ngClass]="{'buy': trade.tradeType === 'BUY', 'sell': trade.tradeType === 'SELL'}">
+            {{ trade.tradeType }}
+          </span>
+      </td>
+      <td>{{ trade.symbol }}</td>
+      <td>{{ trade.quantity | number:'1.2-6' }}</td>
+      <td>${{ trade.price | number:'1.2-2' }}</td>
+      <td>{{ getDateFromTimestamp(trade.date) | date:'MM/dd/yyyy HH:mm:ss' }}</td>
+    </tr>
+    </tbody>
+  </table>
+  <h3 *ngIf="tradeHistory.length == 0">You have no trades made</h3>
+</div>
